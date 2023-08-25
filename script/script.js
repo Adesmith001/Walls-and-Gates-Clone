@@ -1,11 +1,11 @@
 function toggleHeaderBackground() {
-    const header = document.querySelector('.header');
+    const header = document.querySelector('nav');
 
     window.addEventListener('scroll', function() {
         if (window.scrollY > 0) {
-            header.classList.add('black-bg');
+            header.style.backgroundColor = 'black';
         } else {
-            header.classList.remove('black-bg');
+            header.style.backgroundColor = 'transparent';
         }
     });
 }
@@ -96,3 +96,13 @@ function handleVideoVisibility() {
 // Listen for scroll events to check video visibility
 window.addEventListener('scroll', handleVideoVisibility);
 window.addEventListener('load', handleVideoVisibility);
+
+//For Hamburger Icon
+document.addEventListener('DOMContentLoaded', function() {
+    const hamburgerIcon = document.getElementById('hamburger-icon');
+    const navLinks = document.querySelector('.nav-links');
+
+    hamburgerIcon.addEventListener('click', function() {
+        navLinks.classList.toggle('active');
+    });
+});
